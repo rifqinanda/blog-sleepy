@@ -10,15 +10,15 @@
 				<div class="text-center">
 					<h3 class="h3 fw-bold">Login</h3>
 				</div>
-				@if($errors->all())
-				<div class="alert alert-danger">
-					<ul>
-						@foreach($errors->any() as $error)
-							<li>{{ $error }}</li>
-						@endforeach
-					</ul>
-				</div>
-				@endif
+				@if($errors->any())
+			    <div class="alert alert-danger">
+				    <ul>
+				    @foreach($errors->all() as $error)
+					    <li>{{ $error }}</li>
+				    @endforeach
+				    </ul>
+			    </div>
+			    @endif
 				<div class="">
 					<form enctype="multipart/form-data" action="/admin/savelogin" method="post">
 						@csrf
